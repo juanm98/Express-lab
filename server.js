@@ -12,8 +12,11 @@ const app = express()
 app.set('view engine', 'ejs')
 
 // Mount Middleware (app.use)
+// Made a redirect to /students
 
-
+app.get('/', function(req, res) {
+    res.redirect('/students')
+})
 
 // Mount routes
 
