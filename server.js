@@ -1,7 +1,7 @@
 // import modules
 
 import express from 'express'
-import { students } from './data/todo-data.js'
+import { students } from './data/students.js'
 
 // Create Express app
 
@@ -21,12 +21,14 @@ app.get('/', function(req, res) {
     res.send('<h1>hello, friend</h1>')
 })
 
-app.get('/students', function (req, res) {
-    res.send('<h1>hello, students</h1>')
-})
-
 app.get('/home', function(req, res) {
     res.render('home')
+})
+
+app.get('/students', function(req, res) {
+    res.render('students/index', {
+        students: students
+    })
 })
 
 // Tell the app to listen on port 3000
